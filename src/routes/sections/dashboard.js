@@ -34,6 +34,7 @@ export const dashboardRoutes = [
       { element: <IndexPage />, index: true },
       { path: 'two', element: <PageTwo /> },
       { path: 'three', element: <PageThree /> },
+      { path: 'four', element: <PageFour /> },
       
     ],
   },

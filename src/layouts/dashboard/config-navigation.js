@@ -36,7 +36,6 @@ const ICONS = {
   disabled: icon('ic_disabled'),
   external: icon('ic_external'),
   menuItem: icon('ic_menu_item'),
-  users: icon('ic_user'),
   ticket: icon('ic_ticket'),
   dashboard: icon('ic_analytics'),
 };
@@ -50,11 +49,16 @@ export function useNavData() {
       {
         items: [
           { title: 'Dashboard', path: paths.dashboard.root, icon: ICONS.dashboard },
-          { title: 'User', path: paths.dashboard.two, icon: ICONS.users },
+          { title: 'User', path: paths.dashboard.two, icon: ICONS.user },
           {
             title: 'Ticket',
             path: paths.dashboard.three,
             icon: ICONS.ticket,
+          },
+          {
+            title: 'Employee',
+            path: paths.dashboard.four,
+            icon: ICONS.user,
           },
         ],
       },

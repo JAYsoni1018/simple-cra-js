@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { sub } from 'date-fns';
 // config
 import { ASSETS_API } from 'src/config-global';
@@ -30,7 +31,15 @@ import {
   _problem,
   _dates,
   _cid,
-  _tid
+  _tid,
+  _employeeID,
+  _employee_fullNames,
+  _employee_emails,
+  _employee_password,
+  _employee_phoneNumbers,
+  _employee_role,
+  _employee_department,
+  _employee_address,
 } from './assets';
 
 // ----------------------------------------------------------------------
@@ -62,6 +71,18 @@ export const _mock = {
   lastName: (index) => _lastNames[index],
   fullName: (index) => _fullNames[index],
   companyName: (index) => _companyNames[index],
+
+
+  // employee
+  emp_id: (index) => _employeeID[index],
+  emp_name: (index) => _employee_fullNames[index],
+  emp_email: (index) => _employee_emails[index],
+  emp_password: (index) => _employee_password[index],
+  emp_mobile: (index) => _employee_phoneNumbers[index],
+  emp_role: (index) => _employee_role[index],
+  emp_department: (index) => _employee_department[index],
+  emp_address: (index) => _employee_address[index],
+
   // Number
   number: {
     percent: (index) => _percents[index],

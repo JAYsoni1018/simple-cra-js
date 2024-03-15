@@ -6,6 +6,7 @@ export * from './_mock';
 export * from './_job';
 export * from './_user';
 export * from './ticket';
+export * from './employee';
 export * from './_tour';
 export * from './_blog';
 export * from './_files';
