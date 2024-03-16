@@ -52,5 +52,7 @@ export function applyFilter({ inputData, comparator, filterName }) {
     );
   }
 
+
+
   return inputData;
 }

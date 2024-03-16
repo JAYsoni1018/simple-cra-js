@@ -100,6 +100,7 @@ export default function TicketPage() {
         <Typography variant="h4">Tickets</Typography>
 
          
+
       </Stack>
 
       <Card>
@@ -123,10 +124,10 @@ export default function TicketPage() {
                   { id: 'tid', label: 'TId' },
                   { id: 'cid', label: 'CId' },
                   { id: 'email', label: 'Email' },
-                  { id: 'problem', label: 'Problem' },
+                  { id: 'subject', label: 'Subject' },
+                  // { id: 'problem', label: 'Problem' },
                   { id: 'status', label: 'Status' },
                   { id: 'date', label: 'Date' },
-                  { id: '' },
                 ]}
               />
               <TableBody>
@@ -134,11 +135,12 @@ export default function TicketPage() {
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => (
                     <TicketTableRow
-                      key={row.id}
+                      key={row.tid}
                       tid={row.tid}
                       cid={row.cid}
                       email={row.email}
-                      problem={row.problem}
+                      subject={row.subject}
+                      // problem={row.problem}
                       status={row.status}
                       date={row.date}
                       handleClick={(event) => handleClick(event, row.name)}

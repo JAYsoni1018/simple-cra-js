@@ -50,7 +50,7 @@ export default function App() {
       >
         <ThemeProvider>
           <MotionLazy>
-            <SettingsDrawer />/
+            <SettingsDrawer />
             <ProgressBar />
             <AuthConsumer>
               <Router />

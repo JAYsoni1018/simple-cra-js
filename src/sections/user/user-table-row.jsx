@@ -17,7 +17,8 @@ export default function UserTableRow({
   name,
   email,
   mobile,
-  problem,
+  subject,
+  // problem,
   status,
   date,
   handleClick,
@@ -43,7 +44,7 @@ export default function UserTableRow({
 
   const handleStatusChange = (newStatus) => {
     // Handle status change here
-    console.log('New Status:', newStatus);
+    // console.log('New Status:', newStatus);
     handleClose();
   };
   return (
@@ -64,8 +65,11 @@ export default function UserTableRow({
           {mobile}
         </TableCell>
         <TableCell  >
-          {problem}
+          {subject}
         </TableCell>
+        {/* <TableCell  >
+          {problem}
+        </TableCell> */}
 
 
         {/* <TableCell>
@@ -139,7 +143,8 @@ UserTableRow.propTypes = {
   name: PropTypes.any,
   email: PropTypes.any,
   mobile: PropTypes.any,
-  problem: PropTypes.any,
+  subject: PropTypes.any,
+  // problem: PropTypes.any,
   status: PropTypes.string,
   date: PropTypes.any,
 };

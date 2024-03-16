@@ -14,10 +14,12 @@ import Menu from '@mui/material/Menu';
 // ----------------------------------------------------------------------
 
 export default function TicketTableRow({
+  key,
   tid,
   cid,
   email,
-  problem,
+  subject,
+  // problem,
   status,
   date,
   handleClick,
@@ -45,7 +47,7 @@ export default function TicketTableRow({
 
   const handleStatusChange = (newStatus) => {
     // Handle status change here
-    console.log('New Status:', newStatus);
+    // console.log('New Status:', newStatus);
     handleClose();
   };
   return (
@@ -63,7 +65,8 @@ export default function TicketTableRow({
 
 
         <TableCell >{email}</TableCell>
-        <TableCell >{problem}</TableCell>
+        <TableCell >{subject}</TableCell>
+        {/* <TableCell >{problem}</TableCell> */}
 
         <TableCell onClick={handleClick1}>
         <Label color={
@@ -132,10 +135,12 @@ export default function TicketTableRow({
 }
 
 TicketTableRow.propTypes = {
+  key: PropTypes.any,
   tid: PropTypes.any,
   cid: PropTypes.any,
-  email: PropTypes.func,
-  problem: PropTypes.any,
+  email: PropTypes.any,
+  subject: PropTypes.any,
+  // problem: PropTypes.any,
   status: PropTypes.string,
   date: PropTypes.any,
   handleClick: PropTypes.func,

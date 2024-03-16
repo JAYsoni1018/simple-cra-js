@@ -29,6 +29,7 @@ import {
   _descriptions,
   _phoneNumbers,
   _problem,
+  _subject,
   _dates,
   _cid,
   _tid,
@@ -65,6 +66,7 @@ export const _mock = {
   phoneNumber: (index) => _phoneNumbers[index],
   fullAddress: (index) => _fullAddress[index],
   problems: (index) => _problem[index],
+  subject: (index) => _subject[index],
   dates: (index) => _dates[index],
   // Name
   firstName: (index) => _firstNames[index],

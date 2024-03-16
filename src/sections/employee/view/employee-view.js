@@ -9,11 +9,13 @@ import TableBody from '@mui/material/TableBody';
 import Typography from '@mui/material/Typography';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
+import Divider from '@mui/material/Divider';
 
 import { employees } from 'src/_mock/employee';
 
 import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
+import CustomDialog from 'src/components/Dialog/dialog';
 
 import TableNoData from '../table-no-data';
 import EmployeeTableRow from '../employee-table-row';
@@ -21,6 +23,7 @@ import EmployeeTableHead from '../employee-table-head';
 import TableEmptyRows from '../table-empty-rows';
 import EmployeeTableToolbar from '../empployee-table-toolbar';
 import { emptyRows, applyFilter, getComparator } from '../utils';
+import AddEmployee from '../AddEmployee';
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +39,10 @@ export default function EmployeePage() {
   const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  console.log(employees)
+
+  const [addEmployee, setAddEmployee] = useState(false);
+
+  // console.log(employees)
   const handleSort = (event, id) => {
     const isAsc = orderBy === id && order === 'asc';
     if (id !== '') {
@@ -98,7 +104,22 @@ export default function EmployeePage() {
     <Container>
       <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
         <Typography variant="h4">Employees</Typography>
-
+        {/* <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" onClick={() => {
+          setAddEmployee(true);
+        }} />}>
+          Add Employee
+        </Button> */}
+        <Button
+          sx={{ pt: 2, width: 200 }}
+          size="medium"
+          color="inherit"
+          onClick={() => {
+            setAddEmployee(true);
+          }}
+          endIcon={<Iconify icon="eva:arrow-ios-forward-fill" width={18} sx={{ ml: -0.5 }} />}
+        >
+          Add Employee
+        </Button>
       </Stack>
 
       <Card>
@@ -126,7 +147,7 @@ export default function EmployeePage() {
                   { id: 'emp_role', label: 'Role' },
                   { id: 'emp_department', label: 'Department' },
                   { id: 'date', label: 'Date' },
-                  { id: '' },
+                  { id: 'action', label: 'Action' },
                 ]}
               />
               <TableBody>
@@ -134,7 +155,8 @@ export default function EmployeePage() {
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => (
                     <EmployeeTableRow
-                      key={row.id}
+                      key={row.emp_id}
+                      row={row}
                       emp_id={row.emp_id}
                       emp_name={row.emp_name}
                       emp_email={row.emp_email}
@@ -158,7 +180,13 @@ export default function EmployeePage() {
             </Table>
           </TableContainer>
         </Scrollbar>
-
+        <Divider sx={{ borderStyle: 'dotted' }} />
+        <CustomDialog
+          openFlag={addEmployee}
+          setonClose={() => setAddEmployee(false)}
+          placeHolder="Add New Employee"
+          component={<AddEmployee />}
+        />
         <TablePagination
           page={page}
           component="div"

@@ -36,7 +36,7 @@ export default function UserPage() {
   const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
-console.log(users)
+  // console.log(users)
   const handleSort = (event, id) => {
     const isAsc = orderBy === id && order === 'asc';
     if (id !== '') {
@@ -123,10 +123,10 @@ console.log(users)
                   { id: 'name', label: 'Name' },
                   { id: 'email', label: 'Email' },
                   { id: 'mobile', label: 'Mobile' },
-                  { id: 'problem', label: 'Problem' },
+                  { id: 'subject', label: 'Subject' },
+                  // { id: 'problem', label: 'Problem' },
                   { id: 'status', label: 'Status' },
                   { id: 'date', label: 'Date' },
-                  { id: '' },
                 ]}
               />
               <TableBody>
@@ -134,12 +134,13 @@ console.log(users)
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => (
                     <UserTableRow
-                      key={row.id}
+                      key={row.cid}
                       cid={row.cid}
                       name={row.name}
                       email={row.email}
                       mobile={row.mobile}
-                      problem={row.problem}
+                      subject={row.subject}
+                      // problem={row.problem}
                       status={row.status}
                       date={row.date}
                       handleClick={(event) => handleClick(event, row.name)}

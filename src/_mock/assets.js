@@ -455,6 +455,30 @@ export const _problem = [
   `Magnam non eveniet optio optio ut aliquid atque. Velit libero aspernatur quis laborum consequatur laudantium. Tempora facere optio fugit accusantium ut. Omnis aspernatur reprehenderit autem esse ut ut enim voluptatibus.`,
 ];
 //-------------------------------------
+export const _subject = [
+  'Exploring the Hidden Gems of [Destination]',
+  'How to Master the Art of Public Speaking',
+  'The Future of Artificial Intelligence: Trends and Insights',
+  'Delicious Recipes for a Vegan Diet',
+  "A Beginner's Guide to Investing in Stocks",
+  'The Impact of Social Media on Society',
+  '10 Must-Visit Destinations for Adventure Travelers',
+  'The Benefits of Mindfulness Meditation',
+  'The Importance of Mental Health Awareness',
+  'Building a Strong Personal Brand: Tips and Strategies',
+  '10 Effective Strategies for Digital Marketing Success',
+  'Unveiling the Secrets of Successful Entrepreneurs',
+  'The Rise of Remote Work and its Impact on the Workforce',
+  'The Art of Landscape Photography: Techniques and Inspiration',
+  'Understanding Blockchain Technology and its Potential Applications',
+  'How to Create Engaging Content for Social Media',
+  'The Role of Artificial Intelligence in Healthcare',
+  '10 Home Organization Hacks for a Clutter-Free Space',
+  'Exploring the History and Culture of [City/Region]',
+  'The Power of Positive Thinking: Transform Your Mindset',
+  'The Influence of Music on Mood and Emotions',
+  'Travel Photography Tips: Capturing Memories Around the World',
+];
 export const _firstNames = [
   'Mossie',
   'David',
